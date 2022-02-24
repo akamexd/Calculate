@@ -32,7 +32,6 @@ public class ExtendCalculate extends Fragment {
 
         FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.setCustomAnimations(0, R.animator.slide_in_right);
         fragmentTransaction.replace(R.id.buttonLayout, currentMode);
         fragmentTransaction.commit();
     }

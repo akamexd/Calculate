@@ -21,10 +21,11 @@
     <dimen name="buttonSmallBlockMarginBottom">5dp</dimen>
 
     <dimen name="expressionSize">28sp</dimen>
-    <dimen name="expressionMarginTop">25dp</dimen>
+    <dimen name="expressionMarginBottom">65dp</dimen>
     <dimen name="expressionMarginRight">20dp</dimen>
 
     <dimen name="resultSize">38sp</dimen>
-    <dimen name="resultMarginRight">40dp</dimen>
+    <dimen name="resultMarginBottom">10dp</dimen>
+    <dimen name="resultMarginRight">20dp</dimen>
 
 </resources>

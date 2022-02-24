@@ -22,8 +22,9 @@
             android:textColor="@color/black"
 
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/expressionMarginTop"
-            android:layout_marginEnd="@dimen/expressionMarginRight"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/expressionMarginBottom"
+            android:layout_marginHorizontal="@dimen/expressionMarginRight"
             >
         </TextView>
 
@@ -37,8 +38,9 @@
             android:textColor="@color/black"
 
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/resultMarginRight"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/resultMarginBottom"
+            android:layout_marginHorizontal="@dimen/resultMarginRight"
             >
         </TextView>
 

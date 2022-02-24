@@ -13,9 +13,11 @@ import java.util.function.Supplier;
 
 public abstract class CalculateFragment extends Fragment {
 
+    private final int layoutId;
     private final Supplier<CalculateFragment> fragmentSwitchSupplier;
 
-    protected CalculateFragment(Supplier<CalculateFragment> fragmentSwitchSupplier) {
+    protected CalculateFragment(int layoutId, Supplier<CalculateFragment> fragmentSwitchSupplier) {
+        this.layoutId = layoutId;
         this.fragmentSwitchSupplier = fragmentSwitchSupplier;
     }
 
@@ -31,10 +33,9 @@ public abstract class CalculateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_simple_calculate, container, false);
+        View view = inflater.inflate(layoutId, container, false);
 
         view.findViewById(R.id.switch_mode).setOnClickListener(view1 -> switchMode(fragmentSwitchSupplier));
-
 
         return view;
     }

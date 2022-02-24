@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="buttonStyle">
+        <item name="android:layout_width">@dimen/buttonWidth</item>
+        <item name="android:layout_height">@dimen/buttonWidth</item>
+        <item name="android:textSize">@dimen/buttonsTextSize</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="buttonNotFirst" parent="buttonStyle">
+        <item name="android:layout_marginStart">@dimen/buttonMarginX</item>
+    </style>
+
+    <style name="buttonOrange" parent="buttonNotFirst">
+        <item name="android:backgroundTint">@color/orange</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="buttonFirstGray" parent="buttonStyle">
+        <item name="android:backgroundTint">@color/gray_black</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="doubleButtonFirstGray" parent="buttonFirstGray">
+        <item name="android:layout_width">@dimen/buttonDoubleWidth</item>
+    </style>
+
+    <style name="buttonNotFirstGray" parent="buttonNotFirst">
+        <item name="android:backgroundTint">@color/gray_black</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="buttonFirstWhiteGray" parent="buttonStyle">
+        <item name="android:backgroundTint">@color/gray_white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="buttonNotFirstWhiteGray" parent="buttonNotFirst">
+        <item name="android:backgroundTint">@color/gray_white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="buttonRow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="buttonSmallStyle">
+        <item name="android:layout_width">@dimen/buttonSmallWidth</item>
+        <item name="android:layout_height">@dimen/buttonSmallWidth</item>
+        <item name="android:textSize">@dimen/buttonsSmallTextSize</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="buttonSmallNotFirst" parent="buttonSmallStyle">
+        <item name="android:layout_marginStart">@dimen/buttonSmallMarginX</item>
+    </style>
+
+    <style name="buttonSmallOrange" parent="buttonSmallNotFirst">
+        <item name="android:backgroundTint">@color/orange</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="buttonSmallFirstGray" parent="buttonSmallStyle">
+        <item name="android:backgroundTint">@color/gray_black</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="doubleButtonSmallFirstGray" parent="buttonSmallFirstGray">
+        <item name="android:layout_width">@dimen/buttonSmallDoubleWidth</item>
+    </style>
+
+    <style name="buttonSmallNotFirstGray" parent="buttonSmallNotFirst">
+        <item name="android:backgroundTint">@color/gray_black</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="buttonSmallFirstWhiteGray" parent="buttonSmallStyle">
+        <item name="android:backgroundTint">@color/gray_white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="buttonNotFirstSmallWhiteGray" parent="buttonSmallNotFirst">
+        <item name="android:backgroundTint">@color/gray_white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>

@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="resultHeight">183dp</dimen>
+    <dimen name="resultHeight">212dp</dimen>
+
+    <dimen name="buttonsTextSize">30sp</dimen>
+    <dimen name="buttonWidth">87dp</dimen>
+    <dimen name="buttonHeight">@dimen/buttonWidth</dimen>
+    <dimen name="buttonDoubleWidth">184dp</dimen>
+    <dimen name="buttonMarginX">10dp</dimen>
+    <dimen name="buttonBlockMarginBottom">5dp</dimen>
+
+    <dimen name="buttonsSmallTextSize">16sp</dimen>
+    <dimen name="buttonSmallWidth">76dp</dimen>
+    <dimen name="buttonSmallHeight">@dimen/buttonSmallWidth</dimen>
+    <dimen name="buttonSmallDoubleWidth">92dp</dimen>
+    <dimen name="buttonSmallMarginX">5dp</dimen>
+    <dimen name="buttonSmallBlockMarginBottom">5dp</dimen>
+
+    <dimen name="expressionSize">28sp</dimen>
+    <dimen name="expressionMarginTop">25dp</dimen>
+    <dimen name="expressionMarginRight">20dp</dimen>
+
+    <dimen name="resultSize">38sp</dimen>
+    <dimen name="resultMarginRight">40dp</dimen>
+
 </resources>

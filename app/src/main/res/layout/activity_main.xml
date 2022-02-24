@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,8 +9,49 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/resultHeight"
-        android:background="@color/dark_white"
+        android:background="@color/white"
         >
+
+        <TextView
+            android:id="@+id/expression"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text=""
+            android:textSize="@dimen/expressionSize"
+            android:textColor="@color/black"
+
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/expressionMarginTop"
+            android:layout_marginEnd="@dimen/expressionMarginRight"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text=""
+            android:textSize="@dimen/resultSize"
+            android:textColor="@color/black"
+
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/resultMarginRight"
+            >
+        </TextView>
+
     </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/dark_white"
+        android:layout_marginBottom="@dimen/buttonBlockMarginBottom"
+        >
+    </FrameLayout>
 
 </RelativeLayout>

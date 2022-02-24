@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".SimpleCalculate">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout style="@style/buttonRow">
+            <Button
+                android:id="@+id/clear"
+                style="@style/buttonFirstWhiteGray"
+                android:text="@string/ac"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/remove_left"
+                style="@style/buttonNotFirstWhiteGray"
+                android:text="@string/remove_left"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/module_share"
+                style="@style/buttonNotFirstWhiteGray"
+                android:text="@string/module_share"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/share"
+                style="@style/buttonOrange"
+                android:text="@string/share"
+                >
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout style="@style/buttonRow">
+            <Button
+                android:id="@+id/_7"
+                style="@style/buttonFirstGray"
+                android:text="@string/_7"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/_8"
+                style="@style/buttonNotFirstGray"
+                android:text="@string/_8"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/_9"
+                style="@style/buttonNotFirstGray"
+                android:text="@string/_9"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/multiply"
+                style="@style/buttonOrange"
+                android:text="@string/multiply"
+                android:textAllCaps="false"
+                >
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout style="@style/buttonRow">
+            <Button
+                android:id="@+id/_4"
+                style="@style/buttonFirstGray"
+                android:text="@string/_4"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/_5"
+                style="@style/buttonNotFirstGray"
+                android:text="@string/_5"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/_6"
+                style="@style/buttonNotFirstGray"
+                android:text="@string/_6"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/minus"
+                style="@style/buttonOrange"
+                android:text="@string/minus"
+                >
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout style="@style/buttonRow">
+            <Button
+                android:id="@+id/_1"
+                style="@style/buttonFirstGray"
+                android:text="@string/_1"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/_2"
+                style="@style/buttonNotFirstGray"
+                android:text="@string/_2"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/_3"
+                style="@style/buttonNotFirstGray"
+                android:text="@string/_3"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/add"
+                style="@style/buttonOrange"
+                android:text="@string/add"
+                >
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout style="@style/buttonRow">
+            <Button
+                android:id="@+id/switch_mode"
+                android:text="@string/mode_switch"
+                style="@style/buttonFirstGray"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/zero"
+                android:text="@string/_0"
+                style="@style/buttonNotFirstGray"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/point"
+                style="@style/buttonNotFirstGray"
+                android:text="@string/point"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/equal"
+                style="@style/buttonOrange"
+                android:text="@string/equal"
+                >
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

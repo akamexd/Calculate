@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">AkamexCalculate</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="c">C</string>
+    <string name="ac">AC</string>
+    <string name="module_share">%</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="add">+</string>
+    <string name="_0">0</string>
+    <string name="point">.</string>
+    <string name="equal">=</string>
+    <string name="mode_switch">+/-</string>
+    <string name="share">/</string>
+    <string name="multiply">x</string>
+    <string name="minus">-</string>
+    <string name="remove_left">⌫</string>
+    <string name="lg">lg</string>
+    <string name="_1_x">1/x</string>
+    <string name="tan">tan</string>
+    <string name="atan">atan</string>
+    <string name="pi">π</string>
+    <string name="asin">asin</string>
+    <string name="sin">sin</string>
+    <string name="acos">acos</string>
+    <string name="cos">cos</string>
+    <string name="square">√</string>
 </resources>

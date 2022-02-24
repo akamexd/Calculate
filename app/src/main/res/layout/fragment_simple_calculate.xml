@@ -7,8 +7,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/buttonBlockHeight"
         android:orientation="vertical"
+        android:layout_marginTop="@dimen/buttonBlockMarginTop"
+        android:layout_marginBottom="@dimen/buttonMarginBottom"
         >
 
         <LinearLayout style="@style/buttonRow">

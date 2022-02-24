@@ -8,9 +8,13 @@
     <dimen name="buttonDoubleWidth">184dp</dimen>
     <dimen name="buttonMarginX">10dp</dimen>
     <dimen name="buttonBlockMarginBottom">5dp</dimen>
+    <dimen name="buttonBlockMarginTop">45dp</dimen>
+    <dimen name="buttonMarginBottom">10dp</dimen>
+    <dimen name="buttonBlockHeight">460dp</dimen>
+    <dimen name="gray_rectangle_marginTop">24dp</dimen>
 
-    <dimen name="buttonsSmallTextSize">16sp</dimen>
-    <dimen name="buttonSmallWidth">76dp</dimen>
+    <dimen name="buttonsSmallTextSize">15sp</dimen>
+    <dimen name="buttonSmallWidth">72dp</dimen>
     <dimen name="buttonSmallHeight">@dimen/buttonSmallWidth</dimen>
     <dimen name="buttonSmallDoubleWidth">92dp</dimen>
     <dimen name="buttonSmallMarginX">5dp</dimen>

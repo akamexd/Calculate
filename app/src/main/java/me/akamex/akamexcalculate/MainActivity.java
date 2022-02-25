@@ -6,19 +6,15 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.widget.EditText;
 
-import me.akamex.akamexcalculate.button.InputButtonHandleService;
-import me.akamex.akamexcalculate.button.MinusButton;
-import me.akamex.akamexcalculate.button.PlusButton;
+import me.akamex.akamexcalculate.button.CalculatorButtons;
+import me.akamex.akamexcalculate.expression.CalculatorExpression;
+import me.akamex.akamexcalculate.fragment.SimpleCalculatorFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     private Fragment currentMode;
-
-    private InputButtonHandleService inputButtonHandleService = new InputButtonHandleService(
-        new PlusButton(), new MinusButton()
-    );
+    private final CalculatorExpression expression = new CalculatorExpression();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if(savedInstanceState == null || currentMode == null) {
-            currentMode = SimpleCalculate.newInstance(inputButtonHandleService);
+            currentMode = new SimpleCalculatorFragment(expression, CalculatorButtons.defaultSetup());
 
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

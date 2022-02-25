@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".SimpleCalculate">
+    tools:context="me.akamex.akamexcalculate.fragment.SimpleCalculatorFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

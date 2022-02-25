@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".MainActivity">
 
@@ -15,9 +16,12 @@
         <TextView
             android:id="@+id/expression"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/expressionHeight"
 
             android:text=""
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="@dimen/expressionMinSize"
+            app:autoSizeMaxTextSize="@dimen/expressionSize"
             android:textSize="@dimen/expressionSize"
             android:textColor="@color/black"
 

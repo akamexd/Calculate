@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="resultHeight">212dp</dimen>
+    <dimen name="resultHeight">142dp</dimen>
 
     <dimen name="buttonsTextSize">30sp</dimen>
     <dimen name="buttonWidth">87dp</dimen>
@@ -20,9 +20,11 @@
     <dimen name="buttonSmallMarginX">5dp</dimen>
     <dimen name="buttonSmallBlockMarginBottom">5dp</dimen>
 
-    <dimen name="expressionSize">28sp</dimen>
+    <dimen name="expressionSize">30sp</dimen>
     <dimen name="expressionMarginBottom">65dp</dimen>
     <dimen name="expressionMarginRight">20dp</dimen>
+    <dimen name="expressionMinSize">10dp</dimen>
+    <dimen name="expressionHeight">40dp</dimen>
 
     <dimen name="resultSize">38sp</dimen>
     <dimen name="resultMarginBottom">10dp</dimen>

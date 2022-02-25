@@ -8,7 +8,17 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import me.akamex.akamexcalculate.button.InputButtonHandleService;
+import me.akamex.akamexcalculate.button.MinusButton;
+import me.akamex.akamexcalculate.button.PlusButton;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Fragment currentMode;
+
+    private InputButtonHandleService inputButtonHandleService = new InputButtonHandleService(
+        new PlusButton(), new MinusButton()
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if(savedInstanceState == null || currentMode == null) {
-            currentMode = SimpleCalculate.newInstance();
+            currentMode = SimpleCalculate.newInstance(inputButtonHandleService);
 
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -24,7 +34,5 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
     }
-
-    private Fragment currentMode;
 
 }

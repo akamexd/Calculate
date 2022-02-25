@@ -10,39 +10,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class SimpleCalculate extends Fragment {
+import me.akamex.akamexcalculate.button.InputButtonHandleService;
 
-    public SimpleCalculate() {
+public class SimpleCalculate extends CalculateFragment  {
+
+    public SimpleCalculate(InputButtonHandleService inputButtonHandleService) {
+        super(inputButtonHandleService, R.layout.fragment_simple_calculate, () -> ExtendCalculate.newInstance(inputButtonHandleService));
     }
 
-    public static SimpleCalculate newInstance() {
-        SimpleCalculate fragment = new SimpleCalculate();
+    public static SimpleCalculate newInstance(InputButtonHandleService inputButtonHandleService) {
+        SimpleCalculate fragment = new SimpleCalculate(inputButtonHandleService);
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    private void switchMode() {
-        Fragment currentMode = ExtendCalculate.newInstance();
-
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.buttonLayout, currentMode);
-        fragmentTransaction.commit();
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_simple_calculate, container, false);
-
-        view.findViewById(R.id.switch_mode).setOnClickListener(view1 -> switchMode());
-
-        return view;
-    }
 }

@@ -28,124 +28,130 @@ public final class CalculatorButtonImpl {
         }
     }
 
-    private static class SignCalculatorButton extends DefaultImpl {
+    private static class AfterDigitOrEmptyAddComponentCalculatorButton extends DefaultImpl {
 
-        public SignCalculatorButton(int id, BiConsumer<View, CalculatorExpression> onClick) {
+        public AfterDigitOrEmptyAddComponentCalculatorButton(int id, String component) {
+            super(id, (view, expression) -> {
+                String handling = expression.getHandling();
+                if(handling.length() != 0 && !NumberUtils.isDigits(handling.substring(handling.length() - 1))) {
+                    return;
+                }
+
+                expression.addExpressionComponent(component);
+            });
+        }
+
+    }
+
+    private static class AfterDigitAddComponentCalculatorButton extends DefaultImpl {
+
+        public AfterDigitAddComponentCalculatorButton(int id, String component) {
             super(id, (view, expression) -> {
                 String handling = expression.getHandling();
                 if(handling.length() == 0 || !NumberUtils.isDigits(handling.substring(handling.length() - 1))) {
                     return;
                 }
 
-                onClick.accept(view, expression);
+                expression.addExpressionComponent(component);
             });
         }
 
     }
 
-    private static class FunctionCalculatorButton extends DefaultImpl {
+    private static class AfterSignOrEmptyAddComponentCalculatorButton extends DefaultImpl {
 
-        public FunctionCalculatorButton(int id, BiConsumer<View, CalculatorExpression> onClick) {
+        public AfterSignOrEmptyAddComponentCalculatorButton(int id, String component) {
             super(id, (view, expression) -> {
                 String handling = expression.getHandling();
                 if(handling.length() != 0 && NumberUtils.isDigits(handling.substring(handling.length() - 1))) {
                     return;
                 }
 
-                onClick.accept(view, expression);
+                expression.addExpressionComponent(component);
             });
         }
 
     }
 
-    private static class NumberCalculatorButton extends DefaultImpl {
+    private static class AnywhereAddComponentCalculatorButton extends DefaultImpl {
 
-        public NumberCalculatorButton(int id, BiConsumer<View, CalculatorExpression> onClick) {
-            super(id, onClick);
+        public AnywhereAddComponentCalculatorButton(int id, String component) {
+            super(id, (view, expression) -> {
+                String handling = expression.getHandling();
+                if(handling.endsWith(")")) {
+                    return;
+                }
+
+                expression.addExpressionComponent(component);
+            });
         }
 
     }
 
-    public static final CalculatorButton PLUS = new SignCalculatorButton(R.id.add, (view, expression) -> expression.addExpressionComponent(" + "));
+    public static final CalculatorButton PLUS = new AfterDigitAddComponentCalculatorButton(R.id.add, " + ");
 
-    public static final CalculatorButton MINUS = new SignCalculatorButton(R.id.minus, (view, expression) -> expression.addExpressionComponent(" - "));
+    public static final CalculatorButton MINUS = new AfterDigitAddComponentCalculatorButton(R.id.minus, " - ");
 
-    public static final CalculatorButton SHARE = new SignCalculatorButton(R.id.share, (view, expression) -> expression.addExpressionComponent(" / "));
+    public static final CalculatorButton SHARE = new AfterDigitAddComponentCalculatorButton(R.id.share, " / ");
 
-    public static final CalculatorButton SHARE_MODULE = new SignCalculatorButton(R.id.module_share, (view, expression) -> expression.addExpressionComponent(" % "));
+    public static final CalculatorButton SHARE_MODULE = new AfterDigitAddComponentCalculatorButton(R.id.module_share, " % ");
 
-    public static final CalculatorButton MULTIPLY = new SignCalculatorButton(R.id.multiply, (view, expression) -> expression.addExpressionComponent(" * "));
+    public static final CalculatorButton MULTIPLY = new AfterDigitAddComponentCalculatorButton(R.id.multiply, " * ");
 
-    public static final CalculatorButton _0 = new NumberCalculatorButton(R.id.zero, (view, expression) -> expression.addExpressionComponent("0"));
+    public static final CalculatorButton _0 = new AnywhereAddComponentCalculatorButton(R.id.zero, "0");
 
-    public static final CalculatorButton _1 = new NumberCalculatorButton(R.id._1, (view, expression) -> expression.addExpressionComponent("1"));
+    public static final CalculatorButton _1 = new AnywhereAddComponentCalculatorButton(R.id._1, "1");
 
-    public static final CalculatorButton _2 = new NumberCalculatorButton(R.id._2, (view, expression) -> expression.addExpressionComponent("2"));
+    public static final CalculatorButton _2 = new AnywhereAddComponentCalculatorButton(R.id._2, "2");
 
-    public static final CalculatorButton _3 = new NumberCalculatorButton(R.id._3, (view, expression) -> expression.addExpressionComponent("3"));
+    public static final CalculatorButton _3 = new AnywhereAddComponentCalculatorButton(R.id._3, "3");
 
-    public static final CalculatorButton _4 = new NumberCalculatorButton(R.id._4, (view, expression) -> expression.addExpressionComponent("4"));
+    public static final CalculatorButton _4 = new AnywhereAddComponentCalculatorButton(R.id._4, "4");
 
-    public static final CalculatorButton _5 = new NumberCalculatorButton(R.id._5, (view, expression) -> expression.addExpressionComponent("5"));
+    public static final CalculatorButton _5 = new AnywhereAddComponentCalculatorButton(R.id._5, "5");
 
-    public static final CalculatorButton _6 = new NumberCalculatorButton(R.id._6, (view, expression) -> expression.addExpressionComponent("6"));
+    public static final CalculatorButton _6 = new AnywhereAddComponentCalculatorButton(R.id._6, "6");
 
-    public static final CalculatorButton _7 = new NumberCalculatorButton(R.id._7, (view, expression) -> expression.addExpressionComponent("7"));
+    public static final CalculatorButton _7 = new AnywhereAddComponentCalculatorButton(R.id._7, "7");
 
-    public static final CalculatorButton _8 = new NumberCalculatorButton(R.id._8, (view, expression) -> expression.addExpressionComponent("8"));
+    public static final CalculatorButton _8 = new AnywhereAddComponentCalculatorButton(R.id._8, "8");
 
-    public static final CalculatorButton _9 = new NumberCalculatorButton(R.id._9, (view, expression) -> expression.addExpressionComponent("9"));
+    public static final CalculatorButton _9 = new AnywhereAddComponentCalculatorButton(R.id._9, "9");
 
-    public static final CalculatorButton EQUAL = new DefaultImpl(R.id.equal, (view, expression) -> {
-        expression.calculateResult();
-    });
+    public static final CalculatorButton EQUAL = new DefaultImpl(R.id.equal, (view, expression) -> expression.calculateResult());
 
-    public static final CalculatorButton REMOVE_LEFT = new DefaultImpl(R.id.remove_left, (view, expression) -> {
-        expression.removeLeftExpressionComponent();
-    });
+    public static final CalculatorButton REMOVE_LEFT = new DefaultImpl(R.id.remove_left, (view, expression) -> expression.removeLeftExpressionComponent());
 
-    public static final CalculatorButton CLEAR = new DefaultImpl(R.id.clear, (view, expression) -> {
-        expression.clearExpressionComponent();
-    });
+    public static final CalculatorButton CLEAR = new DefaultImpl(R.id.clear, (view, expression) -> expression.clearExpressionComponent());
 
-    public static final CalculatorButton BRACKET = new FunctionCalculatorButton(R.id.bracket, (view, expression) -> {
-        expression.addExpressionComponent("(");
-    });
+    public static final CalculatorButton BRACKET = new AfterSignOrEmptyAddComponentCalculatorButton(R.id.bracket, "(");
 
-    public static final CalculatorButton BRACKET_2 = new SignCalculatorButton(R.id.bracket_2, (view, expression) -> {
+    public static final CalculatorButton BRACKET_2 = new DefaultImpl(R.id.bracket_2, (view, expression) -> {
+        String handling = expression.getHandling();
+        if(handling.length() == 0) {
+            String last = handling.substring(handling.length() - 1);
+            if(!NumberUtils.isDigits(last) && last.equals(")")) {
+                return;
+            }
+        }
+
         expression.addExpressionComponent(")");
     });
 
-    public static final CalculatorButton ROOT = new SignCalculatorButton(R.id.root, (view, expression) -> {
-        expression.addExpressionComponent("√");
-    });
+    public static final CalculatorButton ROOT = new AfterDigitOrEmptyAddComponentCalculatorButton(R.id.root, "sqrt(");
 
-    public static final CalculatorButton COS = new FunctionCalculatorButton(R.id.cos, (view, expression) -> {
-        expression.addExpressionComponent("cos(");
-    });
+    public static final CalculatorButton COS = new AfterSignOrEmptyAddComponentCalculatorButton(R.id.cos, "cos(");
 
-    public static final CalculatorButton ACOS = new FunctionCalculatorButton(R.id.acos, (view, expression) -> {
-        expression.addExpressionComponent("acos(");
-    });
+    public static final CalculatorButton ACOS = new AfterSignOrEmptyAddComponentCalculatorButton(R.id.acos, "acos(");
 
-    public static final CalculatorButton SIN = new FunctionCalculatorButton(R.id.sin, (view, expression) -> {
-        expression.addExpressionComponent("sin(");
-    });
+    public static final CalculatorButton SIN = new AfterSignOrEmptyAddComponentCalculatorButton(R.id.sin, "sin(");
 
-    public static final CalculatorButton ASIN = new FunctionCalculatorButton(R.id.asin, (view, expression) -> {
-        expression.addExpressionComponent("asin(");
-    });
+    public static final CalculatorButton ASIN = new AfterSignOrEmptyAddComponentCalculatorButton(R.id.asin, "asin(");
 
-    public static final CalculatorButton TAN = new FunctionCalculatorButton(R.id.tan, (view, expression) -> {
-        expression.addExpressionComponent("tan(");
-    });
+    public static final CalculatorButton TAN = new AfterSignOrEmptyAddComponentCalculatorButton(R.id.tan, "tan(");
 
-    public static final CalculatorButton ATAN = new FunctionCalculatorButton(R.id.atan, (view, expression) -> {
-        expression.addExpressionComponent("atan(");
-    });
+    public static final CalculatorButton ATAN = new AfterSignOrEmptyAddComponentCalculatorButton(R.id.atan, "atan(");
 
-    public static final CalculatorButton LOG = new FunctionCalculatorButton(R.id.lg, (view, expression) -> {
-        expression.addExpressionComponent("log(");
-    });
+    public static final CalculatorButton LOG = new AfterSignOrEmptyAddComponentCalculatorButton(R.id.lg, "log(");
 
 }

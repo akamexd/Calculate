@@ -1,6 +1,5 @@
 package me.akamex.akamexcalculate.expression;
 
-import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 import net.objecthunter.exp4j.function.Function;
 
@@ -9,6 +8,8 @@ public class Exp4jExpressionSolver implements ExpressionSolver {
     @Override
     public String toResult(String expression) {
         try {
+
+
             double result = new ExpressionBuilder(expression)
                     .function(new Function("cos", 1) {
                         @Override

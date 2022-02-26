@@ -63,8 +63,8 @@
         >
 
         <View
-            android:layout_width="240dp"
-            android:layout_height="1dp"
+            android:layout_width="@dimen/rectangleWidth"
+            android:layout_height="@dimen/rectangleHeight"
             android:background="@drawable/gray_rectangle"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/gray_rectangle_marginTop"

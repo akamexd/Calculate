@@ -30,4 +30,7 @@
     <dimen name="resultMarginBottom">10dp</dimen>
     <dimen name="resultMarginRight">20dp</dimen>
 
+    <dimen name="rectangleWidth">240dp</dimen>
+    <dimen name="rectangleHeight">1dp</dimen>
+
 </resources>

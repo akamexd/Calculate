@@ -4,6 +4,7 @@ public class CalculatorExpression {
 
     private final ExpressionSolver expressionSolver;
     private String handling, result;
+    private boolean error;
 
     public CalculatorExpression(ExpressionSolver expressionSolver) {
         this.expressionSolver = expressionSolver;
@@ -21,6 +22,9 @@ public class CalculatorExpression {
 
     public CalculatorExpression calculateResult() {
         this.result = expressionSolver.toResult(handling);
+        if(result.equals(ExpressionSolver.ERROR)) {
+            error = true;
+        }
         return this;
     }
 
@@ -34,10 +38,14 @@ public class CalculatorExpression {
     }
 
     public CalculatorExpression removeLeftExpressionComponent() {
-        if(handling.isEmpty()) {
+        if(handling.trim().isEmpty()) {
             return this;
         }
-        handling = handling.substring(0, handling.length() - 1).trim();
+        if(error) {
+            result = "";
+            error = false;
+        }
+        handling = handling.trim().substring(0, handling.trim().length() - 1).trim();
         return this;
     }
 

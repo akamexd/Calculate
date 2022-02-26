@@ -35,9 +35,12 @@
         <TextView
             android:id="@+id/result"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/expressionHeight"
 
             android:text=""
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="@dimen/expressionMinSize"
+            app:autoSizeMaxTextSize="@dimen/expressionSize"
             android:textSize="@dimen/resultSize"
             android:textColor="@color/black"
 

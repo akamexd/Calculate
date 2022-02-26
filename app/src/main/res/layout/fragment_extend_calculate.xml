@@ -15,9 +15,16 @@
 
         <LinearLayout style="@style/buttonRow">
             <Button
-                android:id="@+id/pi"
-                android:text="@string/pi"
+                android:id="@+id/bracket"
+                android:text="@string/bracket_1"
                 style="@style/buttonSmallFirstWhiteGray"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/bracket_2"
+                style="@style/buttonNotFirstSmallWhiteGray"
+                android:text="@string/bracket_2"
                 >
             </Button>
 
@@ -39,16 +46,8 @@
 
             <Button
                 android:id="@+id/lg"
-                style="@style/buttonNotFirstSmallWhiteGray"
-                android:text="@string/lg"
-                android:textAllCaps="false"
-                >
-            </Button>
-
-            <Button
-                android:id="@+id/share_one"
                 style="@style/buttonSmallOrange"
-                android:text="@string/_1_x"
+                android:text="@string/lg"
                 android:textAllCaps="false"
                 >
             </Button>

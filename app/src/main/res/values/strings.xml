@@ -34,4 +34,6 @@
     <string name="cos">cos</string>
     <string name="square">√</string>
     <string name="resultValue">= $1$s</string>
+    <string name="bracket_1">(</string>
+    <string name="bracket_2">)</string>
 </resources>

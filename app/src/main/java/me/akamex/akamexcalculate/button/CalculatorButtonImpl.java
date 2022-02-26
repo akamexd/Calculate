@@ -43,6 +43,21 @@ public final class CalculatorButtonImpl {
 
     }
 
+    private static class FunctionCalculatorButton extends DefaultImpl {
+
+        public FunctionCalculatorButton(int id, BiConsumer<View, CalculatorExpression> onClick) {
+            super(id, (view, expression) -> {
+                String handling = expression.getHandling();
+                if(handling.length() != 0 && NumberUtils.isDigits(handling.substring(handling.length() - 1))) {
+                    return;
+                }
+
+                onClick.accept(view, expression);
+            });
+        }
+
+    }
+
     private static class NumberCalculatorButton extends DefaultImpl {
 
         public NumberCalculatorButton(int id, BiConsumer<View, CalculatorExpression> onClick) {
@@ -61,7 +76,7 @@ public final class CalculatorButtonImpl {
 
     public static final CalculatorButton MULTIPLY = new SignCalculatorButton(R.id.multiply, (view, expression) -> expression.addExpressionComponent(" * "));
 
-    public static final CalculatorButton _1 = new NumberCalculatorButton(R.id.zero, (view, expression) -> expression.addExpressionComponent("0"));
+    public static final CalculatorButton _0 = new NumberCalculatorButton(R.id.zero, (view, expression) -> expression.addExpressionComponent("0"));
 
     public static final CalculatorButton _1 = new NumberCalculatorButton(R.id._1, (view, expression) -> expression.addExpressionComponent("1"));
 
@@ -93,20 +108,44 @@ public final class CalculatorButtonImpl {
         expression.clearExpressionComponent();
     });
 
-    public static final CalculatorButton PI = new SignCalculatorButton(R.id.pi, (view, expression) -> {
-        expression.addExpressionComponent("π");
+    public static final CalculatorButton BRACKET = new FunctionCalculatorButton(R.id.bracket, (view, expression) -> {
+        expression.addExpressionComponent("(");
+    });
+
+    public static final CalculatorButton BRACKET_2 = new SignCalculatorButton(R.id.bracket_2, (view, expression) -> {
+        expression.addExpressionComponent(")");
     });
 
     public static final CalculatorButton ROOT = new SignCalculatorButton(R.id.root, (view, expression) -> {
         expression.addExpressionComponent("√");
     });
 
-    public static final CalculatorButton SHARE_ONE = new SignCalculatorButton(R.id.root, (view, expression) -> {
-        expression.addExpressionComponent("1 / ");
+    public static final CalculatorButton COS = new FunctionCalculatorButton(R.id.cos, (view, expression) -> {
+        expression.addExpressionComponent("cos(");
     });
 
-    public static final CalculatorButton COS = new SignCalculatorButton(R.id.root, (view, expression) -> {
-        expression.addExpressionComponent("cos(");
+    public static final CalculatorButton ACOS = new FunctionCalculatorButton(R.id.acos, (view, expression) -> {
+        expression.addExpressionComponent("acos(");
+    });
+
+    public static final CalculatorButton SIN = new FunctionCalculatorButton(R.id.sin, (view, expression) -> {
+        expression.addExpressionComponent("sin(");
+    });
+
+    public static final CalculatorButton ASIN = new FunctionCalculatorButton(R.id.asin, (view, expression) -> {
+        expression.addExpressionComponent("asin(");
+    });
+
+    public static final CalculatorButton TAN = new FunctionCalculatorButton(R.id.tan, (view, expression) -> {
+        expression.addExpressionComponent("tan(");
+    });
+
+    public static final CalculatorButton ATAN = new FunctionCalculatorButton(R.id.atan, (view, expression) -> {
+        expression.addExpressionComponent("atan(");
+    });
+
+    public static final CalculatorButton LOG = new FunctionCalculatorButton(R.id.lg, (view, expression) -> {
+        expression.addExpressionComponent("log(");
     });
 
 }

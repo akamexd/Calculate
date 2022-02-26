@@ -30,7 +30,10 @@ public class MainActivity extends AppCompatActivity {
                     CalculatorButtonImpl._4, CalculatorButtonImpl._5, CalculatorButtonImpl._6,
                     CalculatorButtonImpl._7, CalculatorButtonImpl._8, CalculatorButtonImpl._9,
                     CalculatorButtonImpl.SHARE_MODULE, CalculatorButtonImpl.SHARE, CalculatorButtonImpl.MULTIPLY,
-                    CalculatorButtonImpl.CLEAR, CalculatorButtonImpl.REMOVE_LEFT
+                    CalculatorButtonImpl.CLEAR, CalculatorButtonImpl.REMOVE_LEFT,
+                    CalculatorButtonImpl.ACOS, CalculatorButtonImpl.COS, CalculatorButtonImpl.SIN, CalculatorButtonImpl.ASIN,
+                    CalculatorButtonImpl.TAN, CalculatorButtonImpl.ATAN, CalculatorButtonImpl.BRACKET, CalculatorButtonImpl.BRACKET_2,
+                    CalculatorButtonImpl._0, CalculatorButtonImpl.ROOT, CalculatorButtonImpl.LOG
             ));
 
             FragmentManager fragmentManager = getSupportFragmentManager();

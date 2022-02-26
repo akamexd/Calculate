@@ -8,7 +8,34 @@ public class Exp4jExpressionSolver implements ExpressionSolver {
     @Override
     public String toResult(String expression) {
         try {
+            int countBracket1 = 0, countBracket2 = 0;
+            for (char current : expression.toCharArray()) {
+                if(current == '(') {
+                    countBracket1++;
+                }
+                if(current == ')') {
+                    countBracket2++;
+                }
+            }
 
+            if(countBracket1 > countBracket2) {
+                int diff = countBracket1 - countBracket2;
+                StringBuilder expressionBuilder = new StringBuilder(expression);
+                while (diff != 0) {
+                    expressionBuilder.append(")");
+                    diff--;
+                }
+                expression = expressionBuilder.toString();
+            }
+            if(countBracket2 > countBracket1) {
+                int diff = countBracket2 - countBracket1;
+                StringBuilder expressionBuilder = new StringBuilder();
+                while (diff != 0) {
+                    expressionBuilder.append("(");
+                    diff--;
+                }
+                expression = expressionBuilder + expression;
+            }
 
             double result = new ExpressionBuilder(expression)
                     .function(new Function("cos", 1) {

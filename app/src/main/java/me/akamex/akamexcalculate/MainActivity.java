@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setTheme(R.style.Theme_AkamexCalculate);
         startService(new Intent(this, NotifyService.class));
 
         if(savedInstanceState == null || currentMode == null) {

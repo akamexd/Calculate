@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="resultHeight">142dp</dimen>
+
+    <dimen name="buttonsTextSize">30sp</dimen>
+    <dimen name="buttonWidth">87dp</dimen>
+    <dimen name="buttonHeight">@dimen/buttonWidth</dimen>
+    <dimen name="buttonDoubleWidth">184dp</dimen>
+    <dimen name="buttonMarginX">10dp</dimen>
+    <dimen name="buttonBlockMarginBottom">5dp</dimen>
+    <dimen name="buttonBlockMarginTop">45dp</dimen>
+    <dimen name="buttonMarginBottom">10dp</dimen>
+    <dimen name="buttonBlockHeight">460dp</dimen>
+    <dimen name="gray_rectangle_marginTop">24dp</dimen>
+
+    <dimen name="buttonsSmallTextSize">15sp</dimen>
+    <dimen name="buttonSmallWidth">72dp</dimen>
+    <dimen name="buttonSmallHeight">@dimen/buttonSmallWidth</dimen>
+    <dimen name="buttonSmallDoubleWidth">92dp</dimen>
+    <dimen name="buttonSmallMarginX">5dp</dimen>
+    <dimen name="buttonSmallBlockMarginBottom">5dp</dimen>
+
+    <dimen name="expressionSize">30sp</dimen>
+    <dimen name="expressionMarginBottom">65dp</dimen>
+    <dimen name="expressionMarginRight">20dp</dimen>
+    <dimen name="expressionMinSize">10dp</dimen>
+    <dimen name="expressionHeight">40dp</dimen>
+
+    <dimen name="resultSize">38sp</dimen>
+    <dimen name="resultMarginBottom">10dp</dimen>
+    <dimen name="resultMarginRight">20dp</dimen>
+
+    <dimen name="rectangleWidth">240dp</dimen>
+    <dimen name="rectangleHeight">1dp</dimen>
+
+</resources>

@@ -1,5 +1,6 @@
 package me.akamex.akamexcalculate;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setTheme(R.style.Theme_AkamexCalculate);
+        startService(new Intent(this, NotifyService.class));
+
         if(savedInstanceState == null || currentMode == null) {
             currentMode = new SimpleCalculatorFragment(expression, CalculatorButtons.defaultSetup(
                     CalculatorButtonImpl.MINUS, CalculatorButtonImpl.PLUS, CalculatorButtonImpl.EQUAL,
@@ -33,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     CalculatorButtonImpl.CLEAR, CalculatorButtonImpl.REMOVE_LEFT,
                     CalculatorButtonImpl.ACOS, CalculatorButtonImpl.COS, CalculatorButtonImpl.SIN, CalculatorButtonImpl.ASIN,
                     CalculatorButtonImpl.TAN, CalculatorButtonImpl.ATAN, CalculatorButtonImpl.BRACKET, CalculatorButtonImpl.BRACKET_2,
-                    CalculatorButtonImpl._0, CalculatorButtonImpl.ROOT, CalculatorButtonImpl.LOG
+                    CalculatorButtonImpl._0, CalculatorButtonImpl.ROOT, CalculatorButtonImpl.LOG, CalculatorButtonImpl.POINT
             ));
 
             FragmentManager fragmentManager = getSupportFragmentManager();

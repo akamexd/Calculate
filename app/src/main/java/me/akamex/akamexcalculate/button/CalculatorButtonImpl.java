@@ -43,12 +43,35 @@ public final class CalculatorButtonImpl {
 
     }
 
+    private static class AfterDigitOrBracketAddComponentCalculatorButton extends DefaultImpl {
+
+        public AfterDigitOrBracketAddComponentCalculatorButton(int id, String component) {
+            super(id, (view, expression) -> {
+                String handling = expression.getHandling();
+                if(handling.length() == 0) {
+                    return;
+                }
+                String last = handling.substring(handling.length() - 1);
+                if(!NumberUtils.isDigits(last) && !last.equals(")")) {
+                    return;
+                }
+
+                expression.addExpressionComponent(component);
+            });
+        }
+
+    }
+
     private static class AfterDigitAddComponentCalculatorButton extends DefaultImpl {
 
         public AfterDigitAddComponentCalculatorButton(int id, String component) {
             super(id, (view, expression) -> {
                 String handling = expression.getHandling();
-                if(handling.length() == 0 || !NumberUtils.isDigits(handling.substring(handling.length() - 1))) {
+                if(handling.length() == 0) {
+                    return;
+                }
+                String last = handling.substring(handling.length() - 1);
+                if(!NumberUtils.isDigits(last)) {
                     return;
                 }
 
@@ -63,8 +86,11 @@ public final class CalculatorButtonImpl {
         public AfterSignOrEmptyAddComponentCalculatorButton(int id, String component) {
             super(id, (view, expression) -> {
                 String handling = expression.getHandling();
-                if(handling.length() != 0 && NumberUtils.isDigits(handling.substring(handling.length() - 1))) {
-                    return;
+                if(handling.length() != 0) {
+                    String last = handling.substring(handling.length() - 1);
+                    if(NumberUtils.isDigits(last) || last.equals(")")) {
+                        return;
+                    }
                 }
 
                 expression.addExpressionComponent(component);
@@ -88,15 +114,15 @@ public final class CalculatorButtonImpl {
 
     }
 
-    public static final CalculatorButton PLUS = new AfterDigitAddComponentCalculatorButton(R.id.add, " + ");
+    public static final CalculatorButton PLUS = new AfterDigitOrBracketAddComponentCalculatorButton(R.id.add, " + ");
 
-    public static final CalculatorButton MINUS = new AfterDigitAddComponentCalculatorButton(R.id.minus, " - ");
+    public static final CalculatorButton MINUS = new AfterDigitOrBracketAddComponentCalculatorButton(R.id.minus, " - ");
 
-    public static final CalculatorButton SHARE = new AfterDigitAddComponentCalculatorButton(R.id.share, " / ");
+    public static final CalculatorButton SHARE = new AfterDigitOrBracketAddComponentCalculatorButton(R.id.share, " / ");
 
-    public static final CalculatorButton SHARE_MODULE = new AfterDigitAddComponentCalculatorButton(R.id.module_share, " % ");
+    public static final CalculatorButton SHARE_MODULE = new AfterDigitOrBracketAddComponentCalculatorButton(R.id.module_share, " % ");
 
-    public static final CalculatorButton MULTIPLY = new AfterDigitAddComponentCalculatorButton(R.id.multiply, " * ");
+    public static final CalculatorButton MULTIPLY = new AfterDigitOrBracketAddComponentCalculatorButton(R.id.multiply, " * ");
 
     public static final CalculatorButton _0 = new AnywhereAddComponentCalculatorButton(R.id.zero, "0");
 
@@ -153,5 +179,7 @@ public final class CalculatorButtonImpl {
     public static final CalculatorButton ATAN = new AfterSignOrEmptyAddComponentCalculatorButton(R.id.atan, "atan(");
 
     public static final CalculatorButton LOG = new AfterSignOrEmptyAddComponentCalculatorButton(R.id.lg, "log(");
+
+    public static final CalculatorButton POINT = new AfterDigitAddComponentCalculatorButton(R.id.point, ".");
 
 }

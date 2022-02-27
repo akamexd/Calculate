@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AkamexCalculate">
+        <service
+            android:name=".NotifyService"
+            android:enabled="true"
+            android:exported="false">
+        </service>
+
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
